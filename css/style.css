@@ -1,0 +1,51 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.calculator {
+    padding: 20px 20px;
+    width: 450px;
+    height: 470px;
+    background: #9f9f9f;
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 100px 100px 100px 100px;
+    gap: 5px;
+
+
+}
+
+#display {
+    grid-column: span 4;
+    padding: 20px;
+    font-size: 24px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 20px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+button:nth-child(15) {
+    grid-column: span 2; /* Кнопка "0" занимает две колонки */
+}
