@@ -39,6 +39,9 @@ class Calculator {
             case '/':
                 result = prev / current;
                 break;
+            case '%':
+                result = prev % current;
+                break;
             default:
                 return;
         }
@@ -62,7 +65,7 @@ class Calculator {
     handleButtonClick(buttonValue) {
         if (!isNaN(buttonValue)) {
             this.appendNumber(buttonValue);
-        } else if (['+', '-', '*', '/'].includes(buttonValue)) {
+        } else if (['+', '-', '*', '/','%'].includes(buttonValue)) {
             this.chooseOperation(buttonValue);
         } else if (buttonValue === '=') {
             this.compute();
@@ -72,14 +75,12 @@ class Calculator {
     }
 }
 
-// Получаем элементы кнопок и дисплея
+
 const displayElement = document.getElementById('display');
 const buttons = document.querySelectorAll('.calculator button');
 
-// Создаем экземпляр калькулятора
 const calculator = new Calculator(displayElement);
 
-// Добавляем обработчики событий на кнопки
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const buttonValue = button.textContent;
